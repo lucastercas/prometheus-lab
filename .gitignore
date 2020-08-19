@@ -1,8 +1,9 @@
 # Terraform Files
 **/.terraform
-**/*.tfstate
+**/*.tfstate*
 
 # Ansible Files
 # **/ansible/roles/*
-# **/inventories
-!**/inventories/lucastercas.*/*
+!**/ansible/roles/lucastercas.*/*
+**/inventories/*
+**/*.retry
