@@ -1,0 +1,5 @@
+---
+- name: Configure monitoring machines
+  hosts: monitoring
+  roles:
+    -

@@ -1,0 +1,4 @@
+**/ansible/roles/*
+**/.terraform
+**/inventories
+**/*.tfstate
