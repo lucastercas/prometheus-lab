@@ -1,4 +1,17 @@
 ---
 all:
   hosts:
-    
+    master-01:
+      ansible_host: 209.97.144.62
+    worker-01:
+      ansible_host: 157.245.126.68
+
+  children:
+    monitoring:
+      hosts:
+        master-01:
+        worker-01:
+    monitored:
+      hosts:
+        master-01:
+        worker-01:

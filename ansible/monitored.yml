@@ -1,6 +1,8 @@
 ---
 - name: Configure monitored machines
   hosts: monitored
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
   roles:
     - geerlingguy.docker
     - lucastercas.configure-monitored

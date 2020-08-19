@@ -7,7 +7,7 @@ run-monitoring:
 		-v ~/.ssh/id_rsa:/root/.ssh/id_rsa \
 		-v ~/.ssh/id_rsa.pub:/root/ssh/id_rsa.pub \
 		lucastercas/ansible \
-			ansible-playbook -i inventories/all.yml monitoring.yml -v
+			ansible-playbook -i inventories/all.yml monitoring.yml
 
 run-monitored:
 	@docker run --rm -ti \
@@ -16,7 +16,7 @@ run-monitored:
 		-v ~/.ssh/id_rsa:/root/.ssh/id_rsa \
 		-v ~/.ssh/id_rsa.pub:/root/ssh/id_rsa.pub \
 		lucastercas/ansible \
-			ansible-playbook -i inventories/all.yml monitored.yml -v
+			ansible-playbook -i inventories/all.yml monitored.yml
 
 install-requirements:
 	@docker run --rm -it \
