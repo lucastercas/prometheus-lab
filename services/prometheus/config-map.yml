@@ -1,0 +1,22 @@
+---
+apps: v1
+kind: ConfigMap
+metadata:
+  namespace: monitoring
+  name: prometheus-config
+data:
+  prometheus.yml: |
+    scrape_configs:
+      # Scrape Prometheus itself every 5 seconds.
+      - job_name: "prometheus"
+        scrape_interval: 5s
+        target_groups:
+          - targets: ["localhost:9090"]
+
+      # Scrape the Node Exporter every 5 seconds.
+      - job_name: "node"
+        scrape_interval: 5s
+        target_groups:
+          - targets: 
+              - "server_1:9100"
+              - "server_1:9100"

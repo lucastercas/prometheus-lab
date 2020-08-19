@@ -1,0 +1,6 @@
+---
+- name: Configure monitored machines
+  hosts: monitored
+  roles:
+    - geerlingguy.docker
+    - lucastercas.configure-monitored
