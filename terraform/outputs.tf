@@ -1,19 +1,27 @@
-output "loadbalancer_public" {
-  value = [digitalocean_droplet.loadbalancer.*.ipv4_address]
-}
-output "controlplane_public" {
-  value = [digitalocean_droplet.master.*.ipv4_address]
-}
-output "workers_public" {
-  value = [digitalocean_droplet.worker.*.ipv4_address]
+output "master-info" {
+  value = "${formatlist(
+    "%s => %s / %s",
+    (digitalocean_droplet.master.*.name),
+    (digitalocean_droplet.master.*.ipv4_address),
+    (digitalocean_droplet.master.*.ipv4_address_private),
+  )}"
 }
 
-output "loadbalancer_private" {
-  value = [digitalocean_droplet.loadbalancer.*.ipv4_address_private]
+output "worker-info" {
+  value = "${formatlist(
+    "%s => %s / %s",
+    (digitalocean_droplet.worker.*.name),
+    (digitalocean_droplet.worker.*.ipv4_address),
+    (digitalocean_droplet.worker.*.ipv4_address_private),
+  )}"
 }
-output "controlplane_private" {
-  value = [digitalocean_droplet.master.*.ipv4_address_private]
+
+output "monitored-info" {
+  value = "${formatlist(
+    "%s => %s / %s",
+    (digitalocean_droplet.monitored.*.name),
+    (digitalocean_droplet.monitored.*.ipv4_address),
+    (digitalocean_droplet.monitored.*.ipv4_address_private),
+  )}"
 }
-output "workers_private" {
-  value = [digitalocean_droplet.worker.*.ipv4_address_private]
-}
+

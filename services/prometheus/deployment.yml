@@ -19,30 +19,30 @@ spec:
     metadata:
       labels:
         app: prometheus
-      annotations:
-        prometheus.io/scrape: "true"
-        prometheus.oi/port: 9090
-      spec:
-        restart: always
-        securityContext: {}
-        terminationGracePeriodSeconds: 30
-        containers:
-          - name: prometheus
-            image: prom/prometheus:v2.20.1
-            imagePullPolicy: IfNotPresent
-            args:
-              - "--config.file=/etc/prometheus/prometheus.yml"
-            ports:
-              - name: default
-                containerPort: 9090
-            volumeMounts:
-              - name: config-volume
-                mountPath: /etc/prometheus
-              - name: prometheus-data
-                mountPath: /prometheus
-        volumes:
-          - name: config-volume
-            configMap:
-              name: prometheus-config
-          - name: prometheus-data
-            emptyDir: {}
+    spec:
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      containers:
+        - name: prometheus
+          image: prom/prometheus:v2.20.1
+          imagePullPolicy: IfNotPresent
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+          args:
+            - "--config.file=/etc/prometheus/prometheus.yml"
+          ports:
+            - name: default
+              containerPort: 9090
+          volumeMounts:
+            - name: config-volume
+              mountPath: /etc/prometheus
+      #       - name: prometheus-data
+      #         mountPath: /prometheus
+      volumes:
+        - name: config-volume
+          configMap:
+            name: prometheus-config
+      #   - name: prometheus-data
+      #     emptyDir: {}

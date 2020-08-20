@@ -1,0 +1,12 @@
+---
+firewall_allowed_tcp_ports:
+  - "22"
+  - "80"
+  - "443"
+  - "9100"
+
+firewall_allowed_udp_ports:
+  - "8472"
+  - "22"
+  - "80"
+  - "9100"

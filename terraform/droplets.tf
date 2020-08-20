@@ -1,6 +1,6 @@
-resource "digitalocean_droplet" "loadbalancer" {
-  count              = 0
-  name               = "loadbalancer-${count.index}"
+resource "digitalocean_droplet" "monitored" {
+  count              = 1
+  name               = "monitored-${count.index}"
   image              = "debian-10-x64"
   size               = "s-2vcpu-2gb"
   region             = "nyc3"
