@@ -3,7 +3,8 @@
 **/*.tfstate*
 
 # Ansible Files
-# **/ansible/roles/*
-!**/ansible/roles/lucastercas.*/*
+**/ansible/roles/*
+# !**/ansible/roles/lucastercas.*/*
 **/inventories/*
 **/*.retry
+**/ansible/master*

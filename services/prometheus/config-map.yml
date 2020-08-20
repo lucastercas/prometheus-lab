@@ -18,5 +18,5 @@ data:
         scrape_interval: 5s
         target_groups:
           - targets: 
-              - "server_1:9100"
-              - "server_1:9100"
+              - "167.71.189.2:9100"
+              - "104.131.80.9:9100"

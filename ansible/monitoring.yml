@@ -1,5 +1,18 @@
 ---
-- name: Configure monitoring machines
+- name: Configure monitoring hosts
   hosts: monitoring
   roles:
-    -
+    - geerlingguy.firewall
+    - geerlingguy.docker
+
+- name: Configure k8s masters
+  hosts: monitoring_masters
+  remote_user: root
+  roles:
+    - lucastercas.kubernetes-master
+
+- name: Configure k8s masters
+  hosts: monitoring_workers
+  remote_user: root
+  roles:
+    - lucastercas.kubernetes-worker

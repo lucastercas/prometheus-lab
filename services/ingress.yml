@@ -2,9 +2,23 @@
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
+  namespace: monitoring
   name: monitoring-ingress
   annotations:
     kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-    - host: ""
+    - host: "prometheus.lucastercas.xyz"
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: prometheus
+              servicePort: 80
+    - host: "grafana.lucastercas.xyz"
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: grafana
+              servicePort: 80
