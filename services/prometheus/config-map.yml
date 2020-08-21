@@ -17,4 +17,4 @@ data:
       - job_name: "node"
         static_configs:
           - targets: 
-              - "157.245.114.50:9100"
+              - ":9100"
