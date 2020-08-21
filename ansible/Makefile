@@ -1,4 +1,4 @@
-.PHONY: install-requirements install-role run-playbook
+.PHONY: install-requirements install-role run-monitoring run-monitored
 
 run-monitoring:
 	@docker run --rm -ti \
@@ -31,3 +31,8 @@ install-role:
 		-v $(CURDIR):/opt/app \
 		lucastercas/ansible \
 			ansible-galaxy install role $(role)
+
+clean:
+	@echo "Cleaning..."
+	rm -rf roles/*
+	rm ./*.retry

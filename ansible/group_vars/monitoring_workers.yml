@@ -9,6 +9,6 @@ firewall_allowed_tcp_ports:
   - "6783"    # weave network
   - "6784"    # weave network
 
-# firewall_additional_rules:
-#   - "iptables -A INPUT -p tcp --match multiport --dports 30000:32767 -j ACCEPT"
-#   - "iptables -A INPUT -p udp --match multiport --dports 30000:32767 -j ACCEPT"
+firewall_additional_rules:
+  - "iptables -A INPUT -p tcp --match multiport --dports 30000:32767 -j ACCEPT"
+  - "iptables -A INPUT -p udp --match multiport --dports 30000:32767 -j ACCEPT"

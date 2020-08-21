@@ -14,10 +14,7 @@ data:
         static_configs:
           - targets: ["localhost:9090"]
 
-      # Scrape the Node Exporter every 5 seconds.
       - job_name: "node"
-        scrape_interval: 5s
         static_configs:
           - targets: 
-              - ":9100"
-              - ":9100"
+              - "157.245.114.50:9100"
