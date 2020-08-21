@@ -12,3 +12,7 @@
 - name: lucastercas.kubernetes-worker
   src: https://github.com/lucastercas/ansible-role-kubernetes-worker
   version: origin/master
+
+- name: lucastercas.bare-node-exporter
+  src: https://github.com/lucastercas/ansible-role-bare-node-exporter
+  version: origin/master
