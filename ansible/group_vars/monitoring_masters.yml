@@ -1,19 +1,15 @@
 ---
 firewall_allowed_tcp_ports:
-  - "22"      # ssh
-  - "80"      # http
+  - "22" # ssh
+  - "80" # http
   - "8080"
-  - "443"     # ssl
-  - "2379"    # etcd server client api
-  - "2380"    # etcd server client api
-  - "6443"    # kubernetes api server
-  - "10250"   # kubelet api
-  - "10251"   # kube-scheduler
-  - "10252"   # kube-controller-manager
-  - "10255"   # read-only kubelet api
-  - "6783"    # weave network
-  - "6784"    # weave network
-
-# firewall_additional_rules:
-#   - "iptables -A INPUT -p tcp --match multiport --dports 30000:32767 -j ACCEPT"
-#   - "iptables -A INPUT -p udp --match multiport --dports 30000:32767 -j ACCEPT"
+  - "443" # ssl
+  - "2379" # etcd server client api
+  - "2380" # etcd server client api
+  - "6443" # kubernetes api server
+  - "10250" # kubelet api
+  - "10251" # kube-scheduler
+  - "10252" # kube-controller-manager
+  - "10255" # read-only kubelet api
+  - "6783" # weave network
+  - "6784" # weave network

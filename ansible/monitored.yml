@@ -2,5 +2,6 @@
 - name: Configure monitored machines
   hosts: monitored
   roles:
+    - geerlingguy.firewall
     - geerlingguy.docker
     - lucastercas.bare-node-exporter

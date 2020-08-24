@@ -2,7 +2,7 @@
 - name: Configure monitoring hosts
   hosts: monitoring
   roles:
-    - geerlingguy.firewall
+    # - geerlingguy.firewall
     - geerlingguy.docker
 
 - name: Configure k8s masters

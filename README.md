@@ -5,11 +5,11 @@ This repository is a test laboratory for monitoring with `prometheus`.
 The `ansible/` one contains two playbooks,one for configuring the hosts
 for monitoring and the other for configuring the hosts that will be monitored.
 
-The monitored hosts will have docker and the `prom/node-exporter` container 
+The monitored hosts will have docker and the `prom/node-exporter` container
 running, sharing its files with the host, and exposing its metrics on port `9100`.
 If you want, there is also a instrumented node.js app to run on it.
 
-The monitoring ones will run a kubernetes cluster. The `services/` directory 
+The monitoring ones will run a kubernetes cluster. The `services/` directory
 stores the kubernetes manifestos for running grafana and prometheus services,
 with a nginx ingress.
 
