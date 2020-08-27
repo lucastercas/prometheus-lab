@@ -50,14 +50,19 @@ resource "digitalocean_firewall" "monitored" {
   }
 }
 
-# resource "digitalocean_firewall" "master" {
-#   name  = "Master Nodes Firewall"
-#   count = 1
-#   droplet_ids = concat(digitalocean_droplet.master.*.id)
-# }
+resource "digitalocean_firewall" "master_nodes" {
+  name        = "master-nodes-firewall"
+  count       = 1
+  droplet_ids = concat(digitalocean_droplet.master.*.id)
+  inbound_rule {
+    protocol         = "tcp"
+    port_range       = "6443"
+    source_addresses = ["0.0.0.0/0", "::/0"]
+  }
+}
 
-# resource "digitalocean_firewall" "worker" {
-#   name  = "Worker Nodes Firewall"
+# resource "digitalocean_firewall" "worker_nodes" {
+#   name  = "worker-nodes-firewall"
 #   count = 1
 #   droplet_ids = concat(digitalocean_droplet.worker.*.id)
 # }
